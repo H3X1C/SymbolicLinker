@@ -43,7 +43,7 @@ int main(int argc, const char * argv[]) {
         destPath[strlen(destPath)-1] = 0;
 
     // Close file
-    fclose(fp);    
+    fclose(fp);
     
     // Prompt user
     printf("Destination path: %s\n", destPath);
@@ -68,6 +68,10 @@ int main(int argc, const char * argv[]) {
     // Success Printout
     printf("Successfully Created Symbolic Link\n");
     printf("Source: %s\nDestination: %s\n", inputPath, destPath);
+
+    // Free memory
+    free(destPath);
+    free(fullCommand);
     
     return 0;
 }
